@@ -2,117 +2,99 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta1/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 
     <style>
         body {
             background-color: #f4f4f4;
-            font-family: 'Ubuntu', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        .container {
-            max-width: 960px;
-        }
-
-        header {
+        .hero-section {
             background-color: #2c3e50;
             color: white;
-            padding: 20px 0;
-            margin-bottom: 40px;
+            padding: 100px 0;
+            text-align: center;
         }
 
-        header h1 {
+        .hero-section h1 {
             font-size: 2.5em;
             font-weight: 700;
+            margin-bottom: 20px;
         }
 
-        header p {
-            font-size: 1.2em;
-            font-weight: 400;
+        .hero-section p {
+            font-size: 1.4em;
+            font-weight: 300;
+            margin-bottom: 40px;
         }
 
         .content-section {
             background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            padding: 60px 0;
+            text-align: center;
         }
 
         .content-section h2 {
-            font-size: 2em;
+            font-size: 2.0em;
             font-weight: 700;
             color: #2c3e50;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
 
-        footer {
+        .content-section .btn {
+            font-size: 1.2em;
+            padding: 10px 30px;
             background-color: #2c3e50;
             color: white;
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            border-radius: 0;
+            transition: all 0.5s ease;
         }
 
-        footer p {
-            font-size: 0.9em;
-            font-weight: 400;
+        .content-section .btn:hover {
+            background-color: #1a242f;
+        }
+
+        #map, .calendly-inline-widget {
+            margin: 0 auto;
         }
     </style>
 
-    <title>Professional Website with Google Maps and Calendly</title>
+    <title>Professional Landing Page with Google Maps and Calendly</title>
 </head>
 
 <body>
-    <header class="text-center">
-        <div class="container">
-            <h1>Professional Website</h1>
-            <p>Featuring Google Maps and Calendly</p>
-        </div>
-    </header>
+    <section class="hero-section">
+        <h1>Welcome to Our Professional Website</h1>
+        <p>Featuring Google Maps and Calendly</p>
+    </section>
 
-    <div class="container">
-        <div class="content-section">
-            <h2 class="text-center">Google Maps</h2>
-            <div id="map" style="height: 400px;"></div>
-            <script>
-                let map;
+    <section class="content-section">
+        <h2>Where We Are</h2>
 
-                async function initMap() {
-                    const { Map } = await google.maps.importLibrary("maps");
+        <div id="map" style="height: 400px; width: 80%; margin: 0 auto;"></div>
+        <script>
+            // Your Google Maps code here...
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzIsDPuWnRjtl3f2gim_YS6rDcaTDtUw8&callback=initMap">
+        </script>
+    </section>
 
-                    map = new Map(document.getElementById("map"), {
-                        center: { lat: -34.397, lng: 150.644 },
-                        zoom: 8,
-                    });
-                }
+    <section class="content-section">
+        <h2>Book a Meeting</h2>
 
-                initMap();
-            </script>
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzIsDPuWnRjtl3f2gim_YS6rDcaTDtUw8&callback=initMap">
-            </script>
-        </div>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/rcolon85/30min" style="min-width:320px;height:580px; margin: 0 auto;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
 
-        <div class="content-section">
-            <h2 class="text-center">Calendly</h2>
-            <div class="calendly-inline-widget" data-url="https://calendly.com/rcolon85/30min" style="min-width:320px;height:580px;"></div>
-            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
-        </div>
-    </div>
-
-    <footer class="text-center">
-        <div class="container">
-            <p>© 2023 Professional Website. All rights reserved.</p>
-        </div>
-    </footer>
+        <a href="https://calendly.com/rcolon85/30min" target="_blank" class="btn">Schedule Now</a>
+    </section>
 
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
